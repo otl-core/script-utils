@@ -90,7 +90,7 @@ function renderMatomo(config: Record<string, string>): ScriptRenderOutput {
 }
 
 function renderPlausible(config: Record<string, string>): ScriptRenderOutput {
-  const domain = cfg(config, "domain");
+  const _domain = cfg(config, "domain");
   const customApiHost = cfg(config, "custom_api_host");
   const baseUrl = customApiHost || "https://plausible.io";
   return {
@@ -102,7 +102,7 @@ function renderPlausible(config: Record<string, string>): ScriptRenderOutput {
 }
 
 function renderFathom(config: Record<string, string>): ScriptRenderOutput {
-  const siteId = cfg(config, "site_id");
+  const _siteId = cfg(config, "site_id");
   const customDomain = cfg(config, "custom_domain");
   const baseUrl = customDomain || "https://cdn.usefathom.com";
   return {
@@ -113,7 +113,7 @@ function renderFathom(config: Record<string, string>): ScriptRenderOutput {
 }
 
 function renderUmami(config: Record<string, string>): ScriptRenderOutput {
-  const websiteId = cfg(config, "website_id");
+  const _websiteId = cfg(config, "website_id");
   const scriptUrl = cfg(config, "script_url");
   return {
     src: scriptUrl,
@@ -123,7 +123,7 @@ function renderUmami(config: Record<string, string>): ScriptRenderOutput {
 }
 
 function renderPirsch(config: Record<string, string>): ScriptRenderOutput {
-  const identificationCode = cfg(config, "identification_code");
+  const _identificationCode = cfg(config, "identification_code");
   return {
     src: `https://api.pirsch.io/pirsch.js`,
     // id and data-code attributes should be set via attributes on ManagedScript
@@ -424,7 +424,7 @@ function renderABTasty(config: Record<string, string>): ScriptRenderOutput {
 }
 
 function renderCookiebot(config: Record<string, string>): ScriptRenderOutput {
-  const cbid = cfg(config, "cbid");
+  const _cbid = cfg(config, "cbid");
   return {
     src: `https://consent.cookiebot.com/uc.js`,
     // data-cbid attribute should be set via attributes on ManagedScript
@@ -433,7 +433,7 @@ function renderCookiebot(config: Record<string, string>): ScriptRenderOutput {
 }
 
 function renderOneTrust(config: Record<string, string>): ScriptRenderOutput {
-  const domainScriptId = cfg(config, "domain_script_id");
+  const _domainScriptId = cfg(config, "domain_script_id");
   return {
     src: `https://cdn.cookielaw.org/scripttemplates/otSDKStub.js`,
     inline: `function OptanonWrapper(){}`,
@@ -444,7 +444,7 @@ function renderOneTrust(config: Record<string, string>): ScriptRenderOutput {
 function renderUsercentrics(
   config: Record<string, string>,
 ): ScriptRenderOutput {
-  const settingsId = cfg(config, "settings_id");
+  const _settingsId = cfg(config, "settings_id");
   return {
     src: `https://app.usercentrics.eu/browser-ui/latest/loader.js`,
     // data-settings-id attribute should be set via attributes on ManagedScript
